@@ -80,4 +80,14 @@ config.module.loaders.push({
   loaders: ["style", "css", "sass"]
 });
 
+// html 页面
+var HtmlwebpackPlugin = require("html-webpack-plugin");
+config.plugins.push(
+  new HtmlwebpackPlugin({
+    filename: "index.html",
+    chunks: ["app"],
+    template: SRC_PATH + "/pages/app.html"
+  })
+);
+
 module.exports = config;
