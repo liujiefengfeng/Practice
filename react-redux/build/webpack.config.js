@@ -61,4 +61,17 @@ var config = {
   ]
 };
 
+// 使用缓存
+var CACHE_PATH = ROOT_PATH + "/cache";
+// loaders
+config.module.loaders = [];
+// 使用 babel 编译 jsx、es6
+config.module.loaders.push({
+  test: /\.js$/,
+  exclude: /node_modules/,
+  include: SRC_PATH,
+  // 这里使用 loaders ，因为后面还需要添加 loader
+  loaders: ["babel?cacheDirectory=" + CACHE_PATH]
+});
+
 module.exports = config;
