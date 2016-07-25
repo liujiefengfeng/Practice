@@ -74,4 +74,10 @@ config.module.loaders.push({
   loaders: ["babel?cacheDirectory=" + CACHE_PATH]
 });
 
+// 编译 sass
+config.module.loaders.push({
+  test: /\.(scss|css)$/,
+  loaders: ["style", "css", "sass"]
+});
+
 module.exports = config;
