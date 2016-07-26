@@ -103,4 +103,18 @@ config.postcss = function() {
   return [precss, autoprefixer];
 };
 
+config.entry.lib = [
+  'react', 'react-dom', 'react-router',
+  'redux', 'react-redux', 'redux-thunk'
+];
+
+config.output.filename = 'js/[name].js';
+
+config.plugins.push(
+    new webpack.optimize.CommonsChunkPlugin('lib', 'js/lib.js')
+);
+
+// 别忘了将 lib 添加到 html 页面
+// chunks: ['app', 'lib']
+
 module.exports = config;
