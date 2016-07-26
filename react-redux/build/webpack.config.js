@@ -117,4 +117,42 @@ config.plugins.push(
 // 别忘了将 lib 添加到 html 页面
 // chunks: ['app', 'lib']
 
+// 压缩 js、css
+config.plugins.push(
+    new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false
+        }
+    })
+);
+
+// 压缩 html
+// html 页面
+var HtmlwebpackPlugin = require('html-webpack-plugin');
+config.plugins.push(
+  new HtmlwebpackPlugin({
+    filename: 'index.html',
+    chunks: ['app', 'lib'],
+    template: SRC_PATH + '/pages/app.html',
+    minify: {
+      collapseWhitespace: true,
+      collapseInlineTagWhitespace: true,
+      removeRedundantAttributes: true,
+      removeEmptyAttributes: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      removeComments: true
+    }
+  })
+);
+
+// 图片路径处理，压缩
+config.module.loaders.push({
+  test: /\.(?:jpg|gif|png|svg)$/,
+  loaders: [
+    'url?limit=8000&name=img/[hash].[ext]',
+    'image-webpack'
+  ]
+});
+
 module.exports = config;
