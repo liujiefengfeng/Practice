@@ -7,6 +7,7 @@
 .sass-cache
 */node_modules/
 *.iml
+*/.idea
 
 # ignore for the Node
 # Logs
