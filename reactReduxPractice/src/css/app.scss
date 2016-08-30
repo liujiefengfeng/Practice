@@ -1,0 +1,68 @@
+body {
+  padding: 100px;
+}
+
+.tab-bar {
+  text-align: right;
+  > span {
+    padding: 5px 5px 0px 5px;
+    margin: 10px;
+    border-left: 2px solid #303030;
+    border-right: 2px solid #303030;
+    border-top: 2px solid #303030;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .tab-bar__active {
+    padding-bottom: 2px;
+    background-color: #444444;
+    color: white;
+  }
+}
+
+.tab-bar__title {
+  border: 2px solid black;
+  padding: 10px;
+  background-color: #444444;
+}
+
+.tab-bar__title--agents {
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.tab-bar__title--all,
+.tab-bar__title--physical,
+.tab-bar__title--virtual {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: black;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.tab-bar__title--all,
+.tab-bar__title--virtual{
+  background-color: #888888;
+}
+
+.tab-bar__title--physical {
+  background-color: white;
+}
+
+.tab-content {
+  > div {
+    display: inline-block;
+  }
+}
+
+.tab-content__info {
+  float: right;
+}
+
+.tab-content__list--first {
+  border: 2px solid gray;
+}
