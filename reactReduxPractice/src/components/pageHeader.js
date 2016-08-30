@@ -4,7 +4,7 @@ export default class PageHeader extends Component {
   render() {
     return(
       <div>
-        {'this is page header for the practice'}
+        {'Cruise'}
       </div>
     )
   }
