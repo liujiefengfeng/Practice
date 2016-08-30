@@ -7,6 +7,7 @@
     "test": "tests"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-redux": "^4.4.5",
