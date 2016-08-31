@@ -51,12 +51,7 @@ class Application extends Component {
       <div className='app__application'>
         <PageHeader />
         <div>
-          <div className='tab-bar'>
-            <span className={classNames({'tab-bar__active': activeBar==='dashboard'})} onClick={this._onClickTab.bind(this, 'dashboard')}>DASHBOARD</span>
-            <span className={classNames({'tab-bar__active': activeBar==='mycruise'})} onClick={this._onClickTab.bind(this, 'mycruise')}>MY CRUISE</span>
-            <span className={classNames({'tab-bar__active': activeBar==='agents'})} onClick={this._onClickTab.bind(this, 'agents')}>AGENTS</span>
-            <span className={classNames({'tab-bar__active': activeBar==='help'})} onClick={this._onClickTab.bind(this, 'help')}>HELP</span>
-          </div>
+          <TabBar onClickTab={this._onClickTab} activeBar={activeBar}/>
           <div>
             {
               this._renderTabBarTitle()
