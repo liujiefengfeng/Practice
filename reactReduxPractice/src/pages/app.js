@@ -8,8 +8,8 @@ import { Router, Route, IndexRoute, browserHistory, Link } from 'react-router';
 
 import reducers from 'reducers/index';
 import PageHeader from '../components/pageHeader';
-import TabBar from '../components/tabBar';
 import Welcome  from './welcome';
+import AgentItem from '../components/agentItem';
 import '../css/app.scss';
 
 class Application extends Component {
@@ -51,33 +51,18 @@ class Application extends Component {
       <div className='app__application'>
         <PageHeader />
         <div>
-          <TabBar onClickTab={this._onClickTab} activeBar={activeBar}/>
+          <div className='tab-bar'>
+            <span className={classNames({'tab-bar__active': activeBar==='dashboard'})} onClick={this._onClickTab.bind(this, 'dashboard')}>DASHBOARD</span>
+            <span className={classNames({'tab-bar__active': activeBar==='mycruise'})} onClick={this._onClickTab.bind(this, 'mycruise')}>MY CRUISE</span>
+            <span className={classNames({'tab-bar__active': activeBar==='agents'})} onClick={this._onClickTab.bind(this, 'agents')}>AGENTS</span>
+            <span className={classNames({'tab-bar__active': activeBar==='help'})} onClick={this._onClickTab.bind(this, 'help')}>HELP</span>
+          </div>
           <div>
             {
               this._renderTabBarTitle()
             }
             <div className='tab-content'>
-              <div className='tab-content__item'>
-                <div className='tab-content__item--first'>
-                  <div>icon</div>
-                  <div>
-                    <div>
-                      <span>bjstdmngbgr02.thoughtworks.com</span>
-                      <span>| idle</span>
-                      <span>| 192.168.1.2</span>
-                      <span>| /var/lib/cruise-agent</span>
-                    </div>
-                    <div>
-                      <span>+ Specify Resources</span>
-                      <span>| Resource:</span>
-                      <span> ubuntu</span>
-                      <span> firefox3</span>
-                      <span> core-duo</span>
-                      <span>Deny</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <AgentItem />
               <div className='tab-content__info'>
                 <div>
                   <div>Summary</div>
