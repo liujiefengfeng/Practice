@@ -1,3 +1,6 @@
-export default function (state = {}, action) {
-  return { data: action.data };
-}
+import { combineReducers } from 'redux'
+import filterTab from './tabBar'
+
+const cruise = combineReducers({activeBar:filterTab});
+
+export default cruise
