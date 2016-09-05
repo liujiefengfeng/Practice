@@ -49,6 +49,7 @@ var config = {
     path: DIST_PATH,
     filename: "js/bundle.js"
   },
+  devtool: 'source-map',
   module: {},
   resolve: {
     alias: alias
@@ -79,16 +80,6 @@ config.module.loaders.push({
   test: /\.(scss|css)$/,
   loaders: ["style", "css", "sass"]
 });
-
-// html 页面
-var HtmlwebpackPlugin = require("html-webpack-plugin");
-config.plugins.push(
-  new HtmlwebpackPlugin({
-    filename: "index.html",
-    chunks: ["app"],
-    template: SRC_PATH + "/pages/app.html"
-  })
-);
 
 // css autoprefix
 var precss = require('precss');
