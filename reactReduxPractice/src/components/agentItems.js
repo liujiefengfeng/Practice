@@ -21,11 +21,11 @@ export default class AgentItem extends Component {
               <span className='agent-items__each__detail-info__specify-resource'>+ Specify Resources</span>
               <span className='agent-items__each__detail-info__vertical'>|</span>
               <span className='agent-items__each__detail-info__resource'>Resource:</span>
-              <span className='agent-items__each__detail-info__machine'> ubuntu</span>
+              <span className='agent-items__each__detail-info__machine'>ubuntu</span>
               <span className='agent-items__each__detail-info__machine-times'>&times;</span>
-              <span className='agent-items__each__detail-info__machine'> firefox3</span>
+              <span className='agent-items__each__detail-info__machine'>firefox3</span>
               <span className='agent-items__each__detail-info__machine-times'>&times;</span>
-              <span className='agent-items__each__detail-info__machine'> core-duo</span>
+              <span className='agent-items__each__detail-info__machine'>core-duo</span>
               <span className='agent-items__each__detail-info__machine-times'>&times;</span>
             </div>
           </div>
