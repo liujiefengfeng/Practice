@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 
 import reducers from 'reducers/index';
 import PageHeader from '../components/pageHeader';
-import AgentItem from '../components/agentItem';
+import AgentItem from '../components/agentItems';
 import '../css/app.scss';
 import { filterTab } from '../js/actions'
 
@@ -13,9 +13,6 @@ class Application extends Component {
 
   constructor(props) {
     super(props);
-    //this.state = {
-    //  activeBar: 'AGENTS'
-    //};
   }
 
   _onClickTab(tabBar) {
