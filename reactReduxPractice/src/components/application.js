@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import { render } from 'react-dom';
 import thunk from 'redux-thunk';
+import { Link } from 'react-router';
 
 import reducers from 'reducers/index';
 import PageHeader from '../components/pageHeader';
@@ -72,7 +73,7 @@ class Application extends Component {
           </div>
         </div>
         <div>
-          <div to="welcome">welcome</div>
+          <Link to="welcome">welcome</Link>
         </div>
       </div>
     );
