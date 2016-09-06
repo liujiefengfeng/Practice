@@ -3,7 +3,6 @@ import {filterTab} from '../js/actions'
 import Application from '../components/application'
 
 const mapStateToProps = (state) => {
-  console.log(state, 'the state in the container');
   return {
     activeBar: state.activeBar
   }
@@ -12,7 +11,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onTabClick: (tabBar) => {
-      console.log(tabBar, 'the tabBar in the onTabClick call back');
       dispatch(filterTab(tabBar))
     }
   }

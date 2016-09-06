@@ -25,7 +25,6 @@ class Application extends Component {
 
   _renderTabBarTitle() {
     const { activeBar } = this.props;
-    console.log(this.props, 'the props in the application component ');
     return activeBar === 'AGENTS' ?
       (
         <div className='tab-bar__title'>
