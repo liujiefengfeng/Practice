@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
+import '../css/agentItems.scss'
 
 export default class AgentItem extends Component {
   render() {
     return (
-      <div className='tab-content__item'>
-        <div className='tab-content__item--first'>
-          <div>icon</div>
-          <div>
+      <div className='agent-items'>
+        <div className='agent-items__each'>
+          <div className='agent-items__each__icon'></div>
+          <div className='agent-items__each__detail-info'>
             <div>
               <span>bjstdmngbgr02.thoughtworks.com</span>
               <span>| idle</span>
