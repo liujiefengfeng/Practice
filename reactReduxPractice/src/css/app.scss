@@ -36,13 +36,12 @@ body {
 }
 
 .tab-content {
-  > div {
-    display: inline-block;
-  }
+  display: flex;
+  justify-content: space-between;
 }
 
 .tab-content__info {
-  float: right;
+  width: 25%;
 }
 
 .tab-content__list--first {

@@ -1,0 +1,24 @@
+.agent-items {
+  width: 75%;
+}
+
+.agent-items__each {
+  display: flex;
+  border: 2px solid black;
+  background-color: green;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.agent-items__each__icon {
+  padding: 25px;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: gray;
+}
+
+.agent-items__each__detail-info {
+  > div {
+    margin: 10px;
+  }
+}
