@@ -29,7 +29,7 @@ export default class AgentItem extends Component {
               <span className='agent-items__each__detail-info__machine-times'>&times;</span>
             </div>
           </div>
-          <div className='agent-items__each__delay'>Deny</div>
+          <div className='agent-items__each__delay'> &oslash; Deny</div>
         </div>
       </div>
     )
