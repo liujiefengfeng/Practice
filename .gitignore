@@ -9,6 +9,9 @@
 *.iml
 */.idea
 
+# python
+*/*.pyc
+
 # ignore for the Node
 # Logs
 logs
