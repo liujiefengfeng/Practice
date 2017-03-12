@@ -9,6 +9,9 @@ const plugin = ({term, display, actions}) => {
   display({
     title: 'It works!',
     subtitle: `You entered ${term}`
+    getPreview: () => (
+      <span> 'Hello' </span>
+    )
   })
 };
 
