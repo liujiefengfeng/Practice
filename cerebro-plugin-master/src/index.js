@@ -28,11 +28,9 @@ const plugin = ({term, display, actions}) => {
       subtitle: `You entered ${term}`,
       getPreview: ()=> (
         <div>
-          {_.map(stockList, stockItem => <StockItem { ...stockItem }/>
-          )}
+          {_.map(stockList, (stockItem, index) => <StockItem { ...stockItem }/>)}
         </div>
-        `<span>${name} ${latestPrice}</span>`)
-
+      )
     })
   });
 };
