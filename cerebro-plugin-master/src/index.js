@@ -1,28 +1,38 @@
 'use strict';
+const React = require('react');
 const { memoize } = require('cerebro-tools');
+const StockItem = require('./stockItem.jsx');
+const _ = require('lodash');
 
-const stockCode = 'sz000001';
-const getStockData = memoize(() => (
+const stockCode = 'sz000002';
+const getStockData = () => (
     fetch(`http://stocks.sina.cn/aj/sh/info?code=${stockCode}`)
       .then(response => response.json())
-  ));
+  );
 
 const plugin = ({term, display, actions}) => {
   // It is your main plugin function
   // do something and call display() with your results
-  display({
-    title: 'It works!',
-    subtitle: `You entered ${term}`,
-  });
-
   getStockData().then(stockData => {
-    console.log('stock data', stockData);
     const latestPrice = stockData.data.hq.zuixin;
-    console.log('the latest price', latestPrice)
+    const name = stockData.data.ah.name;
+    console.log('stock data', stockData);
+    const stockList = [
+      {name: '万科企业', price: '12.00'},
+      {name: '万科企业', price: '12.00'},
+      {name: '万科企业', price: '12.00'},
+      {name: '万科企业', price: '12.00'},
+      ]
     display({
       title: 'It works!',
       subtitle: `You entered ${term}`,
-      getPreview: ()=> `<span>${latestPrice}</span>`
+      getPreview: ()=> (
+        <div>
+          {_.map(stockList, stockItem => <StockItem { ...stockItem }/>
+          )}
+        </div>
+        `<span>${name} ${latestPrice}</span>`)
+
     })
   });
 };
