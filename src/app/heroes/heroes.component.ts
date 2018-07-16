@@ -3,10 +3,10 @@ import { Hero } from '../hero';
 
 @Component({
   selector: 'app-heros',
-  templateUrl: './heros.component.html',
-  styleUrls: ['./heros.component.css']
+  templateUrl: './heroes.component.html',
+  styleUrls: ['./heroes.component.css']
 })
-export class HerosComponent implements OnInit {
+export class HeroesComponent implements OnInit {
 
   hero: Hero = {
     id: 1,
