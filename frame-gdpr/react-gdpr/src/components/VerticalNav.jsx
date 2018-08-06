@@ -1,37 +1,53 @@
 import React from 'react';
-import Drawer from 'material-ui/Drawer';
-import AppBar from 'material-ui/AppBar';
-import MenuItem from 'material-ui/MenuItem';
-import RaisedButton from 'material-ui/RaisedButton';
+import { withStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import Button from '@material-ui/core/Button';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import { mailFolderListItems, otherMailFolderListItems } from './tileData.jsx';
+
+const styles = {
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  },
+};
 
 class VerticalNav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {open: false};
-  }
+  state = {
+    openDrawer: false,
+  };
 
-  handleToggle = () => this.setState({open: !this.state.open});
-
-  handleClose = () => this.setState({open: false});
+  toggleDrawer = (open) => () => this.setState({'openDrawer': open});
 
   render() {
+
+    const sideList = (
+      <div>
+        <List>{mailFolderListItems}</List>
+        <Divider />
+        <List>{otherMailFolderListItems}</List>
+      </div>
+    );
+
     return (
       <div>
-        <RaisedButton
-          label="Open Drawer"
-          onClick={this.handleToggle}
-        />
-        <Drawer width={200}
-                docked={false}
-                open={this.state.open}
-                onRequestChange={(open) => this.setState({open})}>
-          <AppBar title="GDPR"/>
-          <MenuItem onClick={this.handleClose}>Search</MenuItem>
-          <MenuItem onClick={this.handleClose}>Add New</MenuItem>
+        <Button onClick={this.toggleDrawer(true)}>Open Left</Button>
+        <Drawer open={this.state.openDrawer} onClose={this.toggleDrawer(false)}>
+          <div
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer(false)}
+            onKeyDown={this.toggleDrawer(false)}
+          >
+            {sideList}
+          </div>
         </Drawer>
       </div>
     );
   }
 }
 
-export default VerticalNav;
+export default withStyles(styles)(VerticalNav);

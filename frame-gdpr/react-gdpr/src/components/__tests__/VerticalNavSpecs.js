@@ -4,9 +4,9 @@ import {mount} from 'enzyme';
 import {spy} from 'sinon';
 import VerticalNav from '../VerticalNav.jsx';
 
-describe('<Foo />', () => {
-  it('calls componentDidMount', () => {
+describe('VerticalNav component', () => {
+  it('should render Drawer component', () => {
     const wrapper = mount(<VerticalNav/>);
-    expect(wrapper.find('RaisedButton')).to.exist;
+    expect(wrapper.find('Drawer')).to.exist;
   });
 });
