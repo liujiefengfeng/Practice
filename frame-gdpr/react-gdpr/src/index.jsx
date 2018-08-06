@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Search from './page/Search.jsx';
 import './index.scss';
 
-class HelloWorld extends React.Component {
+class App extends React.Component {
   render() {
     return (
-      <div id='hello-world'>Hello World!</div>
+      <div id='hello-world'>
+        <Search/>
+      </div>
     );
   }
 }
 
-ReactDOM.render(<HelloWorld />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
