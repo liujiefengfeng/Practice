@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "mocha --require babel-core/register --require unitTestSetUp.js src/components/__tests__/VerticalNavSpecs.js",
+    "test": "mocha --require babel-core/register --require unitTestSetUp.js src/**/__tests__/**Specs.js",
     "build": "webpack",
     "start": "webpack-dev-server --inline --progress --config webpack.config.js --open"
   },
