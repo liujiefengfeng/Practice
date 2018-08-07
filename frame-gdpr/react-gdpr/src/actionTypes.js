@@ -1,0 +1,1 @@
+export const SEARCH_CARD = "SEARCH_CARD";

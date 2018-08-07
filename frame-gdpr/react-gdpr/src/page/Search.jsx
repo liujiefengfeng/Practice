@@ -1,13 +1,20 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import VerticalNav from '../components/VerticalNav.jsx';
 import CustomizedInput from '../components/CustomizedInput.jsx';
 import SearchIcon from "@material-ui/icons/search";
 import Card from './style/card.svg';
+import {searchByCard} from "../actions";
+import {func} from "prop-types";
 
 class Search extends React.Component {
+  componentWillMount() {
+
+  }
 
   clickSearch = () => {
     const value = this.state.userInput;
+    this.props.clickSearch(value);
     console.log('value', value);
     // TODO: call API
   };
@@ -35,4 +42,15 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+Search.propTypes = {
+  clickSearch: func
+};
+
+const mapDispatchToProps = dispatch => ({
+  clickSearch: cardNumber => dispatch(searchByCard(cardNumber))
+});
+
+export default connect(
+  () => {},
+  mapDispatchToProps
+)(Search);
