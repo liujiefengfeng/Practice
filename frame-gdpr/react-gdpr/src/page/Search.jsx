@@ -2,6 +2,7 @@ import React from 'react';
 import VerticalNav from '../components/VerticalNav.jsx';
 import CustomizedInput from '../components/CustomizedInput.jsx';
 import SearchIcon from "@material-ui/icons/search";
+import Card from './style/card.svg';
 
 class Search extends React.Component {
 
@@ -14,6 +15,9 @@ class Search extends React.Component {
           <div className="search-page_input-box_icon">
             <SearchIcon/>
           </div>
+        </div>
+        <div className="search-page_card-pic">
+          <img className="card-picture" src={Card}/>
         </div>
       </div>
     );

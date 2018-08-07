@@ -1,3 +1,9 @@
+.search-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .search-page_input-box {
   display: flex;
   align-items: center;
@@ -6,4 +12,9 @@
 
 .search-page_input-box_icon {
   padding: 0.5rem;
+}
+
+.search-page_card-pic img {
+  background-color: #2F6FAD;
+  border-radius: 9px;
 }
