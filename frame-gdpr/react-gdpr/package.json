@@ -24,6 +24,8 @@
     "prop-types": "^15.6.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
     "sass-loader": "^6.0.6",
     "webpack": "^3.10.0"
   },
