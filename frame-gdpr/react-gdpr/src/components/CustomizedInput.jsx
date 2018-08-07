@@ -49,7 +49,7 @@ const CustomizedInput = (props) => {
   return (
     <div className={classes.container}>
       <TextField
-        defaultValue="react-bootstrap"
+        defaultValue="input-card-number"
         id="bootstrap-input"
         InputProps={{
           disableUnderline: true,
