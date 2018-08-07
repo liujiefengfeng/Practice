@@ -1,6 +1,7 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import {func, object} from 'prop-types';
 
 const styles = theme => ({
   container: {
@@ -44,7 +45,7 @@ const styles = theme => ({
 });
 
 const CustomizedInput = (props) => {
-  const { classes } = props;
+  const {classes, onChangeValue} = props;
 
   return (
     <div className={classes.container}>
@@ -62,9 +63,15 @@ const CustomizedInput = (props) => {
           shrink: true,
           className: classes.bootstrapFormLabel,
         }}
+        onChange={onChangeValue}
       />
     </div>
   );
+};
+
+CustomizedInput.propTypes = {
+  onChangeValue: func,
+  classes: object
 };
 
 export default withStyles(styles)(CustomizedInput);
