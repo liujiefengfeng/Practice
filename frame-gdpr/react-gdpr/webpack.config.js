@@ -17,6 +17,11 @@ module.exports = {
       template: "src/index.html"
     })],
   devtool: 'source-map',
+  devServer: {
+    proxy: {
+      '/api': 'http://localhost:3000'
+    }
+  },
   module: {
     rules: [
       {

@@ -1,5 +1,5 @@
 module.exports = {
-  path: '/infos/:cardNumber',
+  path: '/api/infos/:cardNumber',
   template: {
     cardNumber: params => String(params.cardNumber),
     name: 'fengfeng',
