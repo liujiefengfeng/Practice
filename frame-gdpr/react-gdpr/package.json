@@ -5,6 +5,7 @@
   "scripts": {
     "test": "mocha --require babel-core/register --require unitTestSetUp.js src/**/__tests__/**Specs.js",
     "build": "webpack",
+    "mock-server": "dyson mocks 3000",
     "start": "webpack-dev-server --inline --progress --config webpack.config.js --open"
   },
   "repository": {
