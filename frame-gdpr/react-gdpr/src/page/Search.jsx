@@ -8,9 +8,6 @@ import {searchByCard} from "../actions";
 import {func} from "prop-types";
 
 class Search extends React.Component {
-  componentWillMount() {
-
-  }
 
   clickSearch = () => {
     const value = this.state.userInput;
