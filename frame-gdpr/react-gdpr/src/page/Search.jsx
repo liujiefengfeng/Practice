@@ -15,8 +15,6 @@ class Search extends React.Component {
   clickSearch = () => {
     const value = this.state.userInput;
     this.props.clickSearch(value);
-    console.log('value', value);
-    // TODO: call API
   };
 
   userInputValue = (event) => {
