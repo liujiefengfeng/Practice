@@ -5,7 +5,7 @@ import CustomizedInput from '../components/CustomizedInput.jsx';
 import SearchIcon from "@material-ui/icons/search";
 import Card from './style/card.svg';
 import {searchByCard} from "../actions";
-import {func} from "prop-types";
+import {func, object} from "prop-types";
 
 class Search extends React.Component {
 
@@ -38,14 +38,16 @@ class Search extends React.Component {
 }
 
 Search.propTypes = {
-  clickSearch: func
+  clickSearch: func,
+  searchPage: object
+};
+
+const mapStateToProps = state => {
+  return {searchPage: state.searchPage};
 };
 
 const mapDispatchToProps = dispatch => ({
   clickSearch: cardNumber => dispatch(searchByCard(cardNumber))
 });
 
-export default connect(
-  () => {},
-  mapDispatchToProps
-)(Search);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
