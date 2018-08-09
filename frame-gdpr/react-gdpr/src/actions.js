@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const searchByCard = (cardNumber) => dispatch => {
   axios.get(`/api/infos/${cardNumber}`)
-    .then(response => dispatch(receiveSearchResult(response)))
+    .then(response => dispatch(receiveSearchResult(response.data)))
     .catch(error => console.log('error', error))
 };
 

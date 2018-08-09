@@ -1,6 +1,7 @@
+import {combineReducers} from 'redux'
 import {SEARCH_CARD} from "./actionTypes";
 
-export const searchPage = (state = {}, action) => {
+const searchPage = (state = {}, action) => {
   switch (action.type) {
     case SEARCH_CARD:
       return Object.assign({}, state, action.payload);
@@ -8,3 +9,7 @@ export const searchPage = (state = {}, action) => {
       return state
   }
 };
+
+const reactGDPR = combineReducers({searchPage});
+
+export default reactGDPR;
