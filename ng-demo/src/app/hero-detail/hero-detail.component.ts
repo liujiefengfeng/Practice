@@ -21,6 +21,7 @@ export class HeroDetailComponent implements OnInit {
   @Input() hero: Hero;
 
   ngOnInit() {
+    this.getHero();
   }
 
   getHero(): void {
@@ -28,4 +29,7 @@ export class HeroDetailComponent implements OnInit {
     this.heroService.getHero(id).subscribe(hero => this.hero = hero);
   }
 
+  goBack(): void {
+    this.location.back();
+  }
 }
