@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from "../hero.service";
+import {current} from "codelyzer/util/syntaxKind";
 
 @Component({
   selector: 'app-heroes',
@@ -31,5 +32,10 @@ export class HeroesComponent implements OnInit {
       .subscribe(hero => {
         this.heroes.push(hero);
       })
+  }
+
+  deleteHero(deletedHero: Hero): void {
+    this.heroes = this.heroes.filter(hero => hero !== deletedHero);
+    this.heroService.deleteHero(deletedHero).subscribe();
   }
 }
