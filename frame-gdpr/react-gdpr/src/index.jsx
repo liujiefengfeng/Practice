@@ -20,21 +20,21 @@ const store = createStore(reactGDPRReducer, composeWithDevTools(applyMiddleware(
 class App extends React.Component {
   render() {
     return (
-      <ConnectedRouter history={browserHistory}>
-        <div>
-          <Route exact path="/"
-                 render={() => (<div><Link to="/search">Search</Link><Link to="/detail">Detail</Link></div>)}/>
-          <Route exact path="/search" component={Search}/>
-          <Route exact path="/detail" component={Detail}/>
-        </div>
-      </ConnectedRouter>
+      <React.Fragment>
+        <Route exact path="/"
+               render={() => (<div><Link to="/search">Search</Link><Link to="/detail">Detail</Link></div>)}/>
+        <Route exact path="/search" component={Search}/>
+        <Route exact path="/detail" component={Detail}/>
+      </React.Fragment>
     );
   }
 }
 
 ReactDOM.render(
   <Provider store={store}>
-    <App/>
+    <ConnectedRouter history={browserHistory}>
+      <App/>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 );
