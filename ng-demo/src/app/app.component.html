@@ -3,5 +3,5 @@
   <a routerLink="/heroes">Heroes</a>
   <a routerLink="/dashboard">Dashboard</a>
 </nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+<button (click)="addValueToB()">addValueToB</button>
+<app-messages hei="1" [config]="config"></app-messages>

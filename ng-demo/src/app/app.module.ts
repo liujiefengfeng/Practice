@@ -12,6 +12,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import {
+  MatButtonModule,
+  MatIconModule,
+  MatInputModule,
+  MatCardModule,
+  MatListModule,
+  MatTabsModule,
+  MatGridListModule,
+  MatRadioModule,
+  MatDatepickerModule,
+  MatSelectModule,
+} from '@angular/material';
+import { ChildComponentComponent } from './child-component/child-component.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +33,13 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    ChildComponentComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    MatIconModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(

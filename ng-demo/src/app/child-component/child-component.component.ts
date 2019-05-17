@@ -1,0 +1,26 @@
+import { Component, Input, OnChanges } from '@angular/core';
+import { cloneDeep } from 'lodash';
+
+@Component({
+  selector: 'app-child-component',
+  templateUrl: './child-component.component.html',
+  styleUrls: ['./child-component.component.css']
+})
+export class ChildComponentComponent implements OnChanges {
+
+  @Input() config;
+
+  constructor() {
+  }
+
+  ngOnChanges(changes) {
+    console.log('ChildComponentComponent');
+    console.log(changes);
+    console.log(changes.config.currentValue);
+  }
+
+  addValueToA() {
+    this.config.a += 1;
+  }
+
+}
