@@ -22,6 +22,8 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "ag-grid-angular": "^20.2.0",
+    "ag-grid-community": "^20.2.0",
     "angular-in-memory-web-api": "^0.6.1",
     "angular-material-source": "github:angular/material",
     "core-js": "^2.5.4",

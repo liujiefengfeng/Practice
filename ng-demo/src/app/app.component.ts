@@ -18,7 +18,10 @@ export class AppComponent {
   private config = {a: 1, b: 2, c: 3};
 
   addValueToB() {
-    // this.config.b += 1;
+    this.config.b += 1;
+  }
+
+  resetAll() {
     this.config = {a: 1, b: 2, c: 3};
   }
 }

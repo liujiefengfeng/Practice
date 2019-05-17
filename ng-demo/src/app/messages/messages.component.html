@@ -1,10 +1,8 @@
 <div>
   <h2>Messages</h2>
-  <div>{{hei}}</div>
-  <div>about</div>
   <div>{{config.a}}</div>
   <div>{{config.b}}</div>
   <div>{{config.c}}</div>
-  <button class="clear" (click)="messageService.clear()">clear</button>
+  <button class="clear" (click)="resetAll()">resetMessage</button>
   <app-child-component [config]="config"></app-child-component>
 </div>
