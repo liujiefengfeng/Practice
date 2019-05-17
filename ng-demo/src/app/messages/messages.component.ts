@@ -22,4 +22,8 @@ export class MessagesComponent implements OnChanges {
     this.configCopy = cloneDeep(changes.config.currentValue);
   }
 
+  resetAll() {
+    this.config = cloneDeep(this.configCopy);
+  }
+
 }

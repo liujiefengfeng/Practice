@@ -10,6 +10,7 @@ export class ChildComponentComponent implements OnChanges {
 
   @Input() config;
 
+  private configCopy;
   constructor() {
   }
 
@@ -17,10 +18,15 @@ export class ChildComponentComponent implements OnChanges {
     console.log('ChildComponentComponent');
     console.log(changes);
     console.log(changes.config.currentValue);
+    this.configCopy = cloneDeep(changes.config.currentValue);
   }
 
   addValueToA() {
     this.config.a += 1;
+    this.config['K'] = 1;
   }
 
+  resetAll() {
+    this.config = cloneDeep(this.configCopy);
+  }
 }

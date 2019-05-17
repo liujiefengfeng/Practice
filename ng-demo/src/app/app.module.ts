@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { ChartModule } from 'angular-highcharts';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
@@ -24,6 +24,7 @@ import {
   MatDatepickerModule,
   MatSelectModule,
 } from '@angular/material';
+import { AgGridModule } from 'ag-grid-angular';
 import { ChildComponentComponent } from './child-component/child-component.component';
 
 @NgModule({
@@ -42,6 +43,8 @@ import { ChildComponentComponent } from './child-component/child-component.compo
     MatIconModule,
     AppRoutingModule,
     HttpClientModule,
+    ChartModule,
+    AgGridModule.withComponents([]),
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false}
     )
