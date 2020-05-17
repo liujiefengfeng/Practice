@@ -27,6 +27,8 @@
     "angular-in-memory-web-api": "^0.6.1",
     "angular-material-source": "github:angular/material",
     "core-js": "^2.5.4",
+    "highcharts": "^6.1.1",
+    "highcharts-angular": "^2.0.3",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },

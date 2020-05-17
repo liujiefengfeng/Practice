@@ -26,6 +26,7 @@ import {
 } from '@angular/material';
 import { AgGridModule } from 'ag-grid-angular';
 import { ChildComponentComponent } from './child-component/child-component.component';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ChildComponentComponent } from './child-component/child-component.compo
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    ChildComponentComponent
+    ChildComponentComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
