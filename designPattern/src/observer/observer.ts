@@ -63,10 +63,10 @@ class BObserver extends Observer {
   }
 }
 
-const subject = new Subject()
+const subject = new Subject();
 
-const aObserver = new AObserver(subject)
-const bObserver = new BObserver(subject)
+const aObserver = new AObserver(subject);
+const bObserver = new BObserver(subject);
 
 console.log('========');
 console.log('State change: 100');
