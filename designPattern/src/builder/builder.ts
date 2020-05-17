@@ -54,4 +54,4 @@ const truckCar: Car = new CarBuilder()
 .setWheels(4)
 .build();
 
-truckCar.info()
+truckCar.info();
