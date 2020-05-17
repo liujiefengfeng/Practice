@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "execute": "npx tsc "
+    "decorator": "npx tsc --target ES5 --emitDecoratorMetadata --experimentalDecorators src/decorator/decorator.ts && node src/decorator/decorator.js",
+    "adapter": "npx tsc --target ES5 src/adapter/adapter.ts && node src/adapter/adapter.js"
   },
   "author": "jiefeng",
   "license": "ISC",
