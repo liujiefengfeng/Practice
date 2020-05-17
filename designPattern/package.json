@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "decorator": "npx tsc --target ES5 --emitDecoratorMetadata --experimentalDecorators src/decorator/decorator.ts && node src/decorator/decorator.js",
     "adapter": "npx tsc --target ES5 src/adapter/adapter.ts && node src/adapter/adapter.js",
-    "factory": "npx tsc --target ES5 src/factory/factory.ts && node src/factory/factory.js"
+    "factory": "npx tsc --target ES5 src/factory/factory.ts && node src/factory/factory.js",
+    "builder": "npx tsc --target ES5 src/builder/builder.ts && node src/builder/builder.js"
   },
   "author": "jiefeng",
   "license": "ISC",
