@@ -5,7 +5,7 @@ function UserException(message){
   this.name = 'UserException'
 }
 
-function getSeason(season){
+export function getSeason(season){
   const SEASON = ['SPRING', 'SUMMER', 'AUTUMN', 'WINTER'];
   if (SEASON[season]) {
     return SEASON[season];
@@ -25,4 +25,3 @@ try {
   console.log(e.stack);
   throw 'this is the exception'
 }
-
