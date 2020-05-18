@@ -1,5 +1,5 @@
 import add from './grammerPractice/a';
-import { isNull, unique } from './grammerPractice/a.js'
+import {isNull, unique} from './grammerPractice/a.js'
 
 console.log(add(5, 6));
 console.log("this is entry file");
