@@ -1,6 +1,6 @@
 class Subject {
   private observers: Array<Observer> = new Array<Observer>();
-  private state: number | undefined;
+  private state!: number;
 
   public subscribe(observer: Observer) {
     this.observers.push(observer);
@@ -33,7 +33,7 @@ class Subject {
 
 
 abstract class Observer {
-  protected subject: Subject | undefined;
+  protected subject!: Subject;
 
   public abstract update(): void;
 }
