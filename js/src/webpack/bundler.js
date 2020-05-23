@@ -34,3 +34,33 @@ function stepOne(filename) {
     code
   }
 }
+
+function stepTwo(entry) {
+  const entryModule = stepOne(entry);
+  const graphArray = [entryModule];
+  
+  for (let i = 0; i < graphArray.length; i++) {
+    const item = graphArray[i];
+    const {dependencies} = item;
+    
+    for (let j in dependencies) {
+      graphArray.push(
+        stepOne(dependencies[j]) //入口模块及其所有相关的模块放入数组
+      )
+    }
+  }
+  
+  //生成依赖图谱
+  
+  const graph = {};
+  graphArray.forEach(item => {
+    graph[item.filename] = {
+      dependencies: item.dependencies,
+      code: item.code
+    }
+  });
+  
+  return graph;
+}
+
+console.log(stepTwo('./index.js'));

@@ -11,3 +11,6 @@ step1:
 @babel/parser生成AST抽象语法树
 @babel/traverse进行AST遍历，记录依赖关系
 @babel/core和@babel/preset-env进行代码的转换
+
+step2
+生成依赖图谱
