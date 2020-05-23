@@ -1,1 +1,3 @@
-console.log("test the function of webpack bundle js");
+import _ from 'lodash';
+
+console.log(_.join(['a', 'b', 'c']));
