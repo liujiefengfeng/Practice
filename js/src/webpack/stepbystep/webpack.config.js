@@ -4,6 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // 压缩 css
 
+const PurifyCSS = require('purifycss-webpack')
+const glob = require('glob-all')
+
 module.exports = {
   entry: {
     main: './src/index.js'
@@ -50,6 +53,13 @@ module.exports = {
       cssProcessor: require('cssnano'), //用于优化\最小化 CSS 的 CSS处理器，默认为 cssnano
       cssProcessorOptions: {safe: true, discardComments: {removeAll: true}}, //传递给 cssProcessor 的选项，默认为{}
       canPrint: true //布尔值，指示插件是否可以将消息打印到控制台，默认为 true
+    }),
+    new PurifyCSS({
+      paths: glob.sync([
+        // 要做 CSS Tree Shaking 的路径文件
+        path.resolve(__dirname, './*.html'), // 请注意，我们同样需要对 html 文件进行 tree shaking
+        path.resolve(__dirname, './src/*.js')
+      ])
     })
   ],
   
