@@ -1,6 +1,8 @@
 const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // 压缩 css
 
 module.exports = {
   entry: {
@@ -38,6 +40,16 @@ module.exports = {
       },
       filename: 'index.html', // 生成后的文件名
       template: 'index.html' // 根据此模版生成 HTML 文件
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    }),
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.css$/g,
+      cssProcessor: require('cssnano'), //用于优化\最小化 CSS 的 CSS处理器，默认为 cssnano
+      cssProcessorOptions: {safe: true, discardComments: {removeAll: true}}, //传递给 cssProcessor 的选项，默认为{}
+      canPrint: true //布尔值，指示插件是否可以将消息打印到控制台，默认为 true
     })
   ],
   
@@ -49,6 +61,20 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.(scss|css)$/, // 针对 .css 后缀的文件设置 loader
+        use: [{
+          loader: MiniCssExtractPlugin.loader
+        },
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [require('autoprefixer')]
+            }
+          },
+          'sass-loader']
       }
     ]
   }

@@ -6,8 +6,8 @@
 - [X] 用 Babel 7 转译 ES6
 - [X] Code Splitting
 - [X] Lazy Loading、Prefetching /* webpackPrefetch: true */ 
-- [] 自动生成 HTML 文件
-- [] 处理 CSS/SCSS 文件
+- [X] 自动生成 HTML 文件
+- [X] 处理 CSS/SCSS 文件
 - [] JS Tree Shaking
 - [] CSS Tree Shaking
 - [] 图片处理汇总
