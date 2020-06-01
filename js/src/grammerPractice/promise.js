@@ -1,54 +1,52 @@
-class Promise {
-  callbacks = [];
-  state = "pending";
-  value = null;
+const isFunction = variable => typeof variable === 'function';
+const PENDING = 'PENDING'
+const FULFILLED = 'FULFILLED'
+const REJECTED = 'REJECTED'
+
+Array.prototype.sort((a, b) => a - b);
+
+
+class MyPromise {
   
-  constructor(fn) {
-    fn(this._resolve.bind(this), this._reject.bind(this))
-  }
-  
-  then(onFulfilled) {
-    return new Promise((resolve, reject) => {
-      this._handle({
-        onFulfilled: onFulfilled || null,
-        onRejected: onRejected || null,
-        resolve: resolve,
-        reject: reject
-      })
-    })
-  }
-  
-  _handle(callback) {
-    if (this.state === "pending") {
-      this.callbacks.push(callback);
-      return;
+  constructor(handle) {
+    if (isFunction(handle)) {
+      throw new Error('MyPromise must accept a function as a parameter')
     }
     
-    let cb = this.state === "fulfilled" ? callback.onFulfilled : callback.onRejected;
-    if (!cb) {
-      cb = this.state === 'fulfilled' ? callback.resolve : callback.reject;
-      cb(this.value);
-      return;
-    }
+    this.status = PENDING;
+    this.value = undefined;
+    this.fulfilledQueues = [];
+    this.rejectedQueues = [];
+    
+    handle(this.resolve, this.reject)
   }
   
-  _resolve(value) {
-    if (value && (typeof value === "object" || typeof value === "function")) {
-      let then = value.then;
-      if (typeof then === "function") {
-        then.call(value, this._resolve(this));
-        return;
-      }
-    }
-    
-    this.state = "fulfilled";
+  resolve(value) {
+    if (this.status !== PENDING) return;
     this.value = value;
-    this.callbacks.forEach(callback => this._handle(callback))
+    this.status = FULFILLED;
   }
   
-  _reject(error) {
-    this.state = "rejected";
-    this.value = error;
-    this.callbacks.forEach(callback => this._handle(callback))
+  reject(err) {
+    if (this.status !== PENDING) return
+    this.status = REJECTED
+    this.value = err
+  }
+  
+  then(onFulfilled, onRejected) {
+    const {status, value} = this;
+    switch (status) {
+      case PENDING:
+        this.fulfilledQueues.push(onFulfilled);
+        this.rejectedQueues.push(onRejected);
+      case FULFILLED:
+        onFulfilled(value)
+        break;
+      case REJECTED:
+        onRejected(value)
+        break;
+    }
+    
+    return this;
   }
 }
